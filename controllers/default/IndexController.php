@@ -10,8 +10,14 @@ class IndexController extends Controller
 	
 	function index()
 	{
+		require_once 'vendor/Model.php';
+		require_once 'models/default/productModel.php';
+		$md = new productModel;
 
-		$data = "Hello";
+		$data[] = $md->getPrds('ngay_nhap',4,4);
+		$data[] = $md->getPrds('ngay_nhap',0,4);
+		$data[] = $md->getPrds('luotmua',0,4);
+
 		$this->render('index', $data);
 	}
 

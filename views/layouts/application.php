@@ -84,6 +84,16 @@ if(isset($_COOKIE['user']) && !isset($_SESSION['user'])){
 						<ul class="dropdown-menu">
 							<li><a href="product/List/All">Tất cả sản phẩm</a></li>
 							<!--- DSDM---->
+							<?php 
+							require_once 'vendor/Model.php';
+							require_once 'models/default/categoryModel.php';
+							$md = new categoryModel;
+							$data = $md->getAllCtgrs();
+							for ($i=0; $i < count($data); $i++) { 
+								$shortname = preg_replace('/\s+/', '', ucfirst($data[$i]['tendm']));
+								?>
+								<li><a href="product/List/<?php echo $shortname ?>"><?php echo $data[$i]['tendm'] ?> (<?php echo $data[$i]['xuatsu'] ?>)</a></li>
+							<?php } ?>
 						</ul>
 					</li>
 					<li class="menu-name" id="dgg"><a href="product/List/OnSale">Đang giảm giá</a></li>
