@@ -33,7 +33,7 @@ $now = new DateTime(null, new DateTimeZone('ASIA/Ho_Chi_Minh'));
 		if(!$this->conn->query($sql)){
 			return false;
 		} else {
-			return true;
+			return true ;
 		}
 	}
 }
