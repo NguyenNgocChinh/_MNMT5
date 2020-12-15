@@ -26,5 +26,11 @@ class IndexController extends Controller
 		}
 		$this->render('signup');
 	}
+	function signin(){
+		if(isset($_SESSION['user'])){
+			header('location: ../');
+		}
+		$this->render('signin');
+	}
 }
 ?>
