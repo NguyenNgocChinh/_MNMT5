@@ -159,5 +159,8 @@ session_unset();
 		setcookie('user',null,-1,'/');
 		header('location: ../');
 	}
+	function viewinfo(){
+		$this->render('info');
+	}
 	
 }
