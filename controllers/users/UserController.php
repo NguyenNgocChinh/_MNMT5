@@ -162,5 +162,29 @@ session_unset();
 	function viewinfo(){
 		$this->render('info');
 	}
+	function vieweditpassword(){
+		$this->render('editPassword');
+	}
+	function editpassword(){
+		//Xu ly sua password
+require_once 'vendor/Model.php';
+		require_once 'models/users/userModel.php';
+		$md = new userModel;
+		$opw = $npw = $cnpw = "";
+		if(isset($_POST['opw'])){$opw = $_POST['opw'];}
+		if(isset($_POST['npw'])){$npw = $_POST['npw'];}
+		if(isset($_POST['cnpw'])){$cnpw = $_POST['cnpw'];}
+		if($opw != $_SESSION['user']['matkhau']){
+			echo "Mật khẩu cũ sai!";
+			return 0;
+		} else {
+			if($npw != $cnpw){
+				echo "Nhập lại mật khẩu không trùng khớp!";
+				return 0;
+			}
+		}
+		$sql = "UPDATE thanhvien SET matkhau = '".$npw."' WHERE id = ".$_SESSION['user']['id'];
+		$md->exe_query($sql);
+	}
 	
 }
