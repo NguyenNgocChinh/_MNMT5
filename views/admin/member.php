@@ -67,7 +67,7 @@
             </thead>
             <tbody>
               <?php 
-                for ($i=0; $i < count($data); $i++) { ?>
+                for ($i=0; $i < count($data); $i+) { ?>
                   <tr>
                     <td><?php echo $i + 1 ?></td>
                     <td><?php echo $data[$i]['id'] ?></td>
