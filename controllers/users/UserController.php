@@ -99,7 +99,7 @@ require_once 'vendor/Model.php';
 		$data = array();
 
 		if($md->getUserByUsername($username)){
-			data = $md->getUserByUsername($username);
+			$data = $md->getUserByUsername($username);
 			if($password == $data['matkhau']){
 				echo "LoginSuccess";
 				$_SESSION['user'] = $data;
