@@ -90,7 +90,7 @@ class UserController extends Controller
 	}
 	function login(){
 		//Xu ly dang nhap
-require_once 'vendor/Model.php';
+		require_once 'vendor/Model.php';
 		require_once 'models/users/userModel.php';
 		$md = new userModel;
 
@@ -100,7 +100,7 @@ require_once 'vendor/Model.php';
 
 		if($md->getUserByUsername($username)){
 			$data = $md->getUserByUsername($username);
-			if($password == $data['matkhau']){
+			if($passwor == $data['matkhau']){
 				echo "LoginSuccess";
 				$_SESSION['user'] = $data;
 				$userCart = array();
