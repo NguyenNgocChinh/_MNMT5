@@ -36,6 +36,7 @@ class IndexAdminController extends Controller
 		require_once 'models/users/userModel.php';
 		$md = new userModel;
 		$username = $_POST['username'];
+		$password = $_POST['password'];
 		if($username == "" || $password == ""){
 			echo "Không được để trống!";
 			return 0;
