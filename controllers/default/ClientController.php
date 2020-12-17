@@ -50,7 +50,7 @@ class ClientController extends Controller
 				}
 				$_SESSION['cart'][] = $md->getPrdById($masp)['masp'];
 			}
-			//echo " ".count($_SESSION['cart']);
+			echo " ".count($_SESSION['cart']);
 		} else {
 			$_SESSION['cart'][] = $md->getPrdById($masp)['masp'];
 			echo " ".count($_SESSION['cart']);
