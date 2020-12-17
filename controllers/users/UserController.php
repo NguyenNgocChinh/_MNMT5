@@ -100,7 +100,7 @@ class UserController extends Controller
 
 		if($md->getUserByUsername($username)){
 			$data = $md->getUserByUsername($username);
-			if($passwor == $data['matkhau']){
+			if($password == $data['matkhau']){
 				echo "LoginSuccess";
 				$_SESSION['user'] = $data;
 				$userCart = array();
